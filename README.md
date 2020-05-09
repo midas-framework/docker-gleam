@@ -15,3 +15,17 @@ docker run --rm gleamlang/gleam gleam --version
 ```
 docker run --rm -v "$PWD":/opt/app -w /opt/app gleamlang/gleam gleam new my_app
 ```
+
+### Contributing
+
+Build the image.
+
+```
+docker build -t gleamlang/gleam[:<tag>]
+```
+
+Publish the image.
+
+```
+docker push gleamlang/gleam[:<tag>]
+```
