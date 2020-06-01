@@ -1,6 +1,6 @@
-FROM rust:1.43.0 AS build
+FROM rust:1.43.1 AS build
 
-ENV GLEAM_VERSION="v0.9.0-rc1"
+ENV GLEAM_VERSION="v0.9.0"
 
 # RUN wget -c https://github.com/gleam-lang/gleam/releases/download/v0.8.0-rc1/gleam-v0.8.0-rc1-linux-amd64.tar.gz -O - | tar -xz -C /bin
 RUN set -xe \
@@ -12,7 +12,7 @@ RUN set -xe \
         && make install \
         && rm -rf /usr/src/gleam-src
 
-FROM erlang:23.0.1
+FROM elixir:1.10.3
 
 COPY --from=build /usr/local/cargo/bin/gleam /bin
 RUN gleam --version
