@@ -24,11 +24,11 @@ docker run --rm -v "$PWD":/opt/app -w /opt/app gleamlang/gleam gleam new my_app
 Build the image.
 
 ```
-docker build -t gleamlang/gleam[:<tag>] .
+docker build -t gleamlang/gleam:<tag> .
 ```
 
 Publish the image.
 
 ```
-docker push gleamlang/gleam[:<tag>]
+docker push gleamlang/gleam:<tag>
 ```
